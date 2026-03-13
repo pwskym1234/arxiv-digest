@@ -12,7 +12,7 @@ from summarizer import PaperSummary
 
 
 # 프로젝트 루트 (_posts가 있는 곳)
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent
 POSTS_DIR = PROJECT_ROOT / "_posts"
 
 
