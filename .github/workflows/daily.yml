@@ -28,7 +28,7 @@ jobs:
       - name: Run arxiv digest
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python3 scripts/main.py
+        run: python3 main.py
 
       - name: Commit and push new post
         run: |
