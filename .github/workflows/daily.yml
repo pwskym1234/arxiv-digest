@@ -34,7 +34,11 @@ jobs:
         run: |
           git config user.name "arxiv-digest-bot"
           git config user.email "bot@arxiv-digest"
-          git add _posts/
-          # 변경사항이 있을 때만 커밋
-          git diff --staged --quiet || git commit -m "📚 $(date +%Y-%m-%d) 논문 다이제스트 추가"
-          git push
+          git add _posts/ || true
+          # 변경사항이 있을 때만 커밋 & 푸시
+          if ! git diff --staged --quiet; then
+            git commit -m "📚 $(date +%Y-%m-%d) 논문 다이제스트 추가"
+            git push
+          else
+            echo "변경사항 없음, 스킵"
+          fi
